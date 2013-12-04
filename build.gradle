@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'guice-vaadin', 'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	def version = [
+		guice: '3.0'
+	]
+
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    compile 'com.vaadin:vaadin-client:7.0.4'
+    compile 'com.vaadin:vaadin-server:7.0.4'
+	compile "com.google.inject:guice:$version.guice"
+	compile "com.google.inject.extensions:guice-servlet:$version.guice"
+	compile "com.google.inject.extensions:guice-multibindings:$version.guice"
+	compile "com.google.inject.extensions:guice-persist:$version.guice"
+	compile "org.slf4j:slf4j-api:1.7.5"
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}

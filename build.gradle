@@ -3,6 +3,7 @@ apply plugin: 'maven'
 
 sourceCompatibility = 1.7
 version = '1.0'
+group = 'de.davherrmann'
 jar {
     manifest {
         attributes 'Implementation-Title': 'guice-vaadin', 'Implementation-Version': version
